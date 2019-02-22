@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Colegio.Models.Materias>
+<br />
+<h1>Materias</h1>
+<p>
+    <button type="button" class="btn btn-success"> @Html.ActionLink("+", "Create",null, new { Style = "color:White" })</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            <button type="button" class="btn btn-primary">@Html.ActionLink("Editar", "Edit", new { id = item.IdMateria }, new { Style = "color:White" })</button> |
+            <button type="button" class="btn btn-danger">@Html.ActionLink("borrar", "Delete", new { id = item.IdMateria }, new { Style = "color:White" })</button>
+</td>
+    </tr>
+}
+
+</table>

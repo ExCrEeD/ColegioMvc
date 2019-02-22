@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SincoABR</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SINCOABR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">@Html.ActionLink("Estudiantes", "index", "Estudiante")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("Materias", "index", "Materia")</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("Profesores", "index", "Profesor")</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("Asignar materias", "index", "ASignaturas")</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("Asignar Notas", "index", "Notas")</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("Reporte Estudiantes", "index", "Report")</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </li>
+
+            </ul>
+            
+        </div>
+    </nav>
+
+    @*<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+          <A class="navbar-brand"> @Html.ActionLink("SincoABR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</A>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+              <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item"><a class="nav-link>"@Html.ActionLink("Estudiantes", "index", "Estudiante")<span class="sr-only">(current)</span></a></li>
+                      <li class="nav-item">@Html.ActionLink("Materias", "index", "Materia")</li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <li class="nav-item">@Html.ActionLink("Profesores", "index", "Profesor")</li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <li class="nav-item">@Html.ActionLink("Asignar materias", "index", "ASignaturas")</li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <li class="nav-item">@Html.ActionLink("Asignar Notas", "index", "Notas")</li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <li class="nav-item">@Html.ActionLink("Reporte", "index", "Report")</li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </ul>
+              </div>
+
+        </nav>*@
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

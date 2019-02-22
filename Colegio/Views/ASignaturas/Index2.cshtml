@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Colegio.Models.Profesor>
+<br />
+@if (ViewBag.Message == null)
+{
+    <h3>Seleccione un Profesor</h3>
+    <br />
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                    @Html.DisplayFor(modelItem => item.apellido)
+                </td>
+                <td>
+                    <button class="btn btn-success"> @Html.ActionLink("Asignar Materias", "Edit", new { id = item.IdProfesor, tipo = "profesor" }, new { Style = "color:White" }) </button>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h3> @ViewBag.Message</h3>
+}

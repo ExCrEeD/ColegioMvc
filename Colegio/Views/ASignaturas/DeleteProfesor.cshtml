@@ -1,0 +1,16 @@
+﻿@model Colegio.Models.AsignaturasProfesores
+
+<br />
+<h3>Esta seguro de borrar esta materia?</h3>
+<h4>@ViewBag.nombremateria</h4>
+<div>
+    <hr />
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-danger" /> |
+            @Html.ActionLink("cancelar", "Index")
+        </div>
+    }
+</div>

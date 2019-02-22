@@ -1,0 +1,52 @@
+﻿@using ReportViewerForMvc
+@model IEnumerable<Colegio.Models.Join>
+<br />
+
+@Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer)
+
+@*<table class="table table-striped">
+        <tr>
+            <th>
+                <p>Estudiante</p>
+            </th>
+            <th>
+                <p>Materia</p>
+            </th>
+            <th>
+                <p>Nota primer semestre</p>
+            </th>
+            <th>
+                <p>Nota segundo semestre</p>
+            </th>
+            <th>
+                <p>Profesor</p>
+            </th>
+            <th>
+
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estudiantevm.nombre)
+                    @Html.DisplayFor(modelItem => item.estudiantevm.apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.materiasvm.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.asignaturassVm.nota1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.asignaturassVm.nota2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.profesorvm.nombre)
+                    @Html.DisplayFor(modelItem => item.profesorvm.apellido)
+                </td>
+            </tr>
+        }
+
+    </table>*@

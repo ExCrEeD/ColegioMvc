@@ -1,0 +1,33 @@
+﻿@model Colegio.Models.Asignaturas
+
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    if (ViewBag.error != null)
+    {
+        <h1>@ViewBag.error</h1>
+    }
+    else
+    {
+        <div class="form-horizontal">
+            <h4>Asignaturas</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.DropDownList("materiasList", ViewBag.materiaList as SelectList, "seleccione una materia")
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

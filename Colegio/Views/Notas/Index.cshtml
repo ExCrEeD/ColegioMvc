@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Colegio.Models.estudiante>
+
+<br />
+@if (@ViewBag.message != " ")
+{
+   <h2>@ViewBag.message</h2>
+}
+else
+{
+    <h2>Seleccione un estudiante</h2>
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numdoc)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numdoc)
+                </td>
+                <td>
+                    @Html.ActionLink("Ver Notas", "Edit", new { id = item.IdEstudiante })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+

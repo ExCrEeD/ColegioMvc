@@ -1,0 +1,14 @@
+﻿@model Colegio.Models.Asignaturas
+
+<br />
+@if (ViewBag.Message == null)
+{
+    <div>
+        <button class="btn btn-success btn-lg" onclick="location.href='@Url.Action("Index3")';return false;">Estudiantes</button>
+        <button class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Index2")';return false;">Profesores</button>
+    </div>
+}
+else
+{
+    <p> @ViewBag.Message</p>
+}

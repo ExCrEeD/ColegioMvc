@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Colegio.Models.Join>
+
+<br />
+
+<p>
+    @if (ViewBag.profesortipo == "profesor")
+    {
+        <h2>
+            Profesor: @ViewBag.profesor
+        </h2>
+        <button class="btn btn-success">@Html.ActionLink("Asignar Materia", "CreateProfesor", new { id = ViewBag.profesorid, tipo = ViewBag.profesortipo }, new { Style = "color:White" })</button>
+    }
+    else
+    {
+        <h2>
+            Estudiante: @ViewBag.profesor
+        </h2>
+        <button class="btn btn-success">@Html.ActionLink("Asignar Materia", "Create", new { id = ViewBag.profesorid, tipo = ViewBag.profesortipo }, new { Style = "color:White" })</button>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <h4>Materia</h4>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.materiasvm.nombre)
+            </td>
+            <td >
+                @if (ViewBag.profesortipo == "profesor")
+                {
+                    <button class="btn btn-danger">@Html.ActionLink("Borrar", "DeleteProfesor", 
+                                                  new { id = item.asignaturasProfesoresVm.IdAsignaturasProfesores,nombremateria =item.materiasvm.nombre }, new { Style = "color:White" })</button>
+                }
+                else
+                {
+                    <button class="btn btn-danger">@Html.ActionLink("Borrar",
+                                                  "Delete", new { id = item.asignaturassVm.IdAsignaturas,nombremateria = item.materiasvm.nombre }, new { Style = "color:White" })</button>
+                }
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Colegio.Models.Join>
+
+<br />
+<table class="table table table-bordered">
+    <tr>
+        <td><strong>Nombre materia</strong></td>
+        <td><strong>Nota primer semestre</strong></td>
+        <td><strong>Nota segundo semestre</strong></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.materiasvm.nombre</td>
+        <td>@item.asignaturassVm.nota1</td>
+        <td>@item.asignaturassVm.nota2</td>
+        <td>
+            @Html.ActionLink("Editar Notas", "editNotas", new { idestudiante = @ViewBag.idestudiante,
+           id = @item.asignaturassVm.IdAsignaturas,
+           idmateria = @item.asignaturassVm.idMateria,idprof =item.asignaturassVm.idprofesor,nombremateria = item.materiasvm.nombre})
+        </td>
+    </tr>
+     }
+</table>

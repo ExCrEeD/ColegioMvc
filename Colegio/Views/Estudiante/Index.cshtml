@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Colegio.Models.estudiante>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h1>Estudiantes</h1>
+<button type="button" class="btn btn-success">@Html.ActionLink("+", "Create", null, new { Style = "color:White" })</button>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numdoc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numdoc)
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary">@Html.ActionLink("Editar", "Edit", new { id = item.IdEstudiante }, new { Style = "color:White" }) </button> 
+                <button type="button" class="btn btn-danger">@Html.ActionLink("Borrar", "Delete", new { id = item.IdEstudiante }, new { Style = "color:White" })</button>
+               
+            </td>
+        </tr>
+    }
+
+</table>
